@@ -1,0 +1,16 @@
+<package>
+  <description>A minimalistic graphical interface for 2-D navigation that does not use the ogre library.</description>
+  <author>Michael Otte</author>
+  <license>GNU GPL V3</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://correll.cs.colorado.edu/pmwiki/index.php/Main/NavViewCu</url>
+  <depend package="roscpp"/>
+  <depend package="nav_msgs"/>
+  <depend package="geometry_msgs"/>
+  <depend package="tf"/>
+  <depend package="message_filters"/>
+  <depend package="move_base_msgs"/>
+  <depend package="tf"/>
+  
+  <cpp cflags="-I${prefix}/src/" lflags="-lglut"/>
+</package>

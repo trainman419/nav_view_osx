@@ -1,0 +1,45 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\b nav_view_cu nav_view_cu is a minimalistic GUI for 2D planning that is a stand-in for the nav_view node in the default ROS installation. We created nav_view_cu for use on slower computers and computers without GPUs (the normal nav_view relies on the Ogre graphics package, which requires a GPU).
+
+\section rosapi ROS API
+
+List of nodes:
+- \b nav_view_cu
+
+<hr>
+
+\subsection nav_view_cu
+
+nav_view_cu subscribes and publishes to the same topics as van_view, these are associated with 2d rover navigation
+
+\subsubsection Usage
+\verbatim
+$ nav_view_cu
+\endverbatim
+
+\par Example
+
+\verbatim
+$ nav_view_cu
+\endverbatim
+
+
+\subsubsection topics ROS topics
+
+Subscribes to:
+- \b "/particlecloud": [geometry_msgs::PoseArray] The robot's current position.
+- \b "/local_costmap/robot_footprint": [geometry_msgs::PolygonStamped] Outline of the robot.
+- \b "/NavfnROS/plan": [van_msgs::Path] Robot's global plan.
+- \b "/TrajectoryPlannerROS/local_plan": [van_msgs::Path] Robot's local plan.
+- \b "/local_costmap/inflated_obstacles": [van_msgs::GridCells] Local Obstacles as they are inflated for planning.
+- \b "/local_costmap/obstacles": [van_msgs::GridCells] Local Obstacles.
+- \b "/static_map": [nav_msgs::GetMap] This is actually a service that requests and receives a cost map.
+
+Publishes to:
+- \b "/move_base/goal": [move_base_msgs::MoveBaseActionGoal] sets the robot goal.
+- \b "/move_base/current_position": [geometry_msgs::PoseStamped] sets the robot pose (this topic seems to have limited functionality).
+
+*/
